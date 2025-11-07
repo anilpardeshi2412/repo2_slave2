@@ -1,8 +1,8 @@
 pipeline{
         agent{
               label{
-                    label "slave-1"
-                            customWorkspace "/mnt/repo1_slave1"
+                    label "slave-2"
+                            customWorkspace "/mnt/repo2_slave2"
               }
         }
         stages {
@@ -10,7 +10,7 @@ pipeline{
                           steps {
                                     sh '''
                                           rm -rf /var/www/html/index.html
-                                          cp /mnt/repo1_slave1/index.html /var/www/html/
+                                          cp /mnt/repo2_slave2/index.html /var/www/html/
                                           chmod 777 /var/www/html/index.html
                                           '''
                                             }
